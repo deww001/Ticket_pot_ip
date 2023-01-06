@@ -1,0 +1,93 @@
+
+.container-fluid {
+    background-color:bisque;
+}
+.card img {
+    height: 500px;
+    width: 1066px;
+    /* margin: 100px; */
+    border-radius: 17px;
+    opacity: 0.5;
+    align-self: center;
+
+
+}
+
+.card {
+    align-self: center;
+}
+
+.col-md-12 {
+    width: 1090px;
+    height: 500px;
+    /* background-color: aqua; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 17px;
+}
+
+#promo {
+    border-radius: 17px;
+}
+
+.col-md-6 {
+    background-color: bisque;
+    width: 400px;
+    height: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 17px;
+
+}
+
+#RR {
+
+    border-radius: 17px;
+
+}
+
+#RR img {
+    height: 400px;
+    width: 376px;
+    border-radius: 17px;
+    opacity: 0.5;
+
+}
+
+#o {
+  
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+.card-title{
+    color: chocolate;
+}
+#detail{
+    color: black;
+}
+.card-text{
+    color: black;
+}
+
+.card button {
+    border: none;
+    border-radius: 12px;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 40%;
+  }
+
+

@@ -1,0 +1,13 @@
+html, boby{
+    height: 100%;
+}
+
+body{
+    padding: 5rem;
+    background-color: aliceblue;
+}
+
+.form-register {
+    max-width: 25rem;
+    margin: auto;
+}

@@ -1,0 +1,17 @@
+html, boby{
+    height: 100%;
+}
+
+body{
+    padding: 5rem;
+    background-color: aliceblue;
+}
+
+.badge{
+    max-width: 25rem;
+     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
