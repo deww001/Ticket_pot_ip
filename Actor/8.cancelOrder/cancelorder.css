@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    padding: 5rem;
+    background-color: #f3dcba;
+}
+
+.main{
+    width: 500px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: #d3b384;
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+
+
+.form-infotic {
+    /* max-width: 25rem; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: aquamarine; */
+}
+
+#tablename{
+    margin: 1rem 0;
+}
+#tic {
+    margin: 1rem 0;
+}
+#floatingName{
+    margin: 1rem 0;
+}
+#buttomm{
+    margin: 1rem 0;
+}
