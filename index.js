@@ -1,21 +1,57 @@
-
-const path = require('path')
 const express = require('express');
-const hbs = require('hbs');
-const generalRouter = require('./routers/general');
-const actorRouter = require('./routers/actorsite');
-const adminRouter = require('./routers/adminsite');
+const mysql = require('mysql');
+const path = require('path');
+const cookieSession = require('cookie-session');
+const connection =require('./server');
+const bodyParser= require('body-parser')
+const {body, validationResult, Result}= require('express-validator');
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
+app.set('Actor',path.join(__dirname,'Actor'))
+app.use(express.static('Actor/2.login'));
+app.use(express.static('Actor/3.register'));
+app.use(express.static('Actor/1.firstpage'));
 
-app.use(express.urlencoded({extended:true}));
-app.set('view engine','hbs');
+app.use(cookieSession({
+    name: 'session',
+    keys:['key1','key2'],
+    maxAge:3600*1000
+}))
 
-hbs.registerPartials(__dirname +'/views/partials');
-app.use(express.static(path.join(__dirname, '/views')));
+const ifNotLoggedIn =(req,res,next)=>{
+    if(!req.session.isLoggedIn){
+        return res.render('login-register');
+    }next();
+}
 
-app.use('/',generalRouter);
-app.use('/actor',actorRouter);
-app.use('/admin',adminRouter);
+//root page
+app.get('/',(req, res,next) => {
+    res.sendFile(path.join(__dirname + "/Actor/2.login/login.html"));
+});
+app.get('/home',(req,res)=>{
+    res.sendFile(path.join(__dirname + "/Actor/1.firstpage/firstpage.html"));
+})
+app.get('/register',(req,res)=>{
+    res.sendFile(__dirname + "/Actor/3.register/register.html")
+});
 
-app.listen(3415, () => console.log(`http://localhost:3415/`));
+app.post('/register',(req,res,next) =>{
+    var email =req.body.email;
+    var name = req.body.name;
+    var password = req.body.password;
+    var phone = req.bady.phone;
+
+    var sql ='INSERT INTO contacts (email,user_name,password,user_phonenumbe) VALUES ("${email}"),("${name}"),("${password}"),("${phone}",NOW())'
+    connection.query(sql,(err,Result)=>{
+        if(err) throw err ;
+        console.log('recode inserted');
+        res.redirect('/register');
+    })
+    
+});
+app.listen(3415, () => console.log('server running on port 3000'));
+
+//creat routes
+
