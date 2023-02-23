@@ -4,10 +4,10 @@ html, boby{
 
 body{
     padding: 5rem;
-    background-color: aliceblue;
+    background-color: rgb(230, 26, 26);
 }
 
 .form-login {
-    max-width: 25rem;
+    max-width: 5rem;
     margin: auto;
 }
