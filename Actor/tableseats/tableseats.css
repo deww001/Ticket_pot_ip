@@ -43,10 +43,10 @@
     border-radius: 5px;
   }
   .exit:before {
-    left: 330px;
+    left: 200px;
   }
   .exit:after {
-    right: 330px;
+    right: 450px;
   }
   
   ol {
@@ -59,7 +59,7 @@
     display: flex;
     
     
-    justify-content: center;
+    justify-content: left;
   }
   
   .seat {
@@ -88,12 +88,19 @@
     box-shadow: 0 0 0px 2px green;
   }
   
-  .seat:nth-child(2) {
-    margin-right: 20%;
-  }
+
+  
   .seat input[type=checkbox] {
     position: absolute;
   }
   .seat input[type=checkbox]:checked + label {
     background: red;
   }
+
+  .dropdown {
+    position: absolute;
+    top: -770px;
+    right: -500;
+    
+  }
+  
